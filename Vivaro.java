@@ -42,9 +42,9 @@ public class Vivaro extends Opel{
 	}
 	
 	@Override
-	public void drive(int meter){
-		if(super.getFuelLevel()>=0){ return; }
-		super.setFuelLevel(super.getFuelLevel()-meter/10);
+	public void drive(double kilometer){
+		if(super.getFuelLevel()<=0){ return; }
+		super.setFuelLevel(super.getFuelLevel()-kilometer/100*10);
 		//10 liter auf 100 kilometer
 	}
 }

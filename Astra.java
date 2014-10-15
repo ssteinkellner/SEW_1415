@@ -42,13 +42,13 @@ public class Astra extends Opel{
 	}
 	
 	@Override
-	public void drive(int meter){
-		if(super.getFuelLevel()>=0){ return; }
+	public void drive(double kilometer){
+		if(super.getFuelLevel()<=0){ return; }
 		if(isCabrio){
-			super.setFuelLevel(super.getFuelLevel()-meter/100*7);
+			super.setFuelLevel(super.getFuelLevel()-kilometer/100*7);
 			//7 liter auf 100 kilometer, das cabrio braucht ein bisschen mehr treibstoff
 		}else{
-			super.setFuelLevel(super.getFuelLevel()-meter/100*5);
+			super.setFuelLevel(super.getFuelLevel()-kilometer/100*5);
 			//5 liter auf 100 kilometer
 		}
 	}

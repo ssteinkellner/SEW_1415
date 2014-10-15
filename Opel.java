@@ -40,14 +40,14 @@ public class Opel extends Auto{
 	}
 	
 	@Override
-	public void drive(int meter){
-		if(super.getFuelLevel()>=0){ return; }
-		super.setFuelLevel(super.getFuelLevel()-meter/100*7); //7 liter auf 100 kilometer
+	public void drive(double kilometer){
+		if(super.getFuelLevel()<=0){ return; }
+		super.setFuelLevel(super.getFuelLevel()-kilometer/100*6); //6 liter auf 100 kilometer
 	}
 
 	@Override
 	public void tanken(float liter) {
-		if(liter>=0){ return; }
+		if(liter<=0){ return; }
 		super.setFuelLevel(super.getFuelLevel()+liter);
 	}
 }
