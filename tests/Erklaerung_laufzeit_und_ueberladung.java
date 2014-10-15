@@ -14,6 +14,7 @@ import org.junit.Test;
  * @author SSteinkellner
  * @version 141010
  * 
+ * @description
  * testfälle und beispiele, anhand derer man das prinzp der laufzeitpolymorhpie
  * relativ einfach erläutern kann
  * 
@@ -28,6 +29,8 @@ public class Erklaerung_laufzeit_und_ueberladung {
 	 * während der Laufzeit kann man Objekte in übergeordnete Objekttypen hineinschreiben,
 	 * daher entscheidet sich aber auch erst während der laufzeit,
 	 * von welchem typ das gespeicherte objekt wirklich ist.
+	 * 
+	 * Überladung
 	 * dementsprechend werden dann auch die methoden ausgeführt.
 	 */
 	
@@ -50,6 +53,7 @@ public class Erklaerung_laufzeit_und_ueberladung {
 	 * 
 	 * überschriebene methoden können verwendet werden, werden dann aber so ausgeführt,
 	 * wie es im innersten objekt definiert ist
+	 * daher sollten 2 verschieden reststände an tank überbleiben
 	 */
 	@Test
 	public void polymorphie01(){
@@ -61,12 +65,14 @@ public class Erklaerung_laufzeit_und_ueberladung {
 		o.tanken(10);
 		o2.tanken(10);
 
-		/* da das eine auto ein opel und das andere ein astra sind,
+		/* da das eine auto ein durchschnittlicher opel und das andere ein astra ist,
 		 * haben sie einen unterschiedlichen verbrauch auf der gleichen strecke
 		 */
-		o.drive(1200);
-		o2.drive(1200);
+		o.drive(17);
+		o2.drive(17);
 		
-		Assert.assertFalse(o.getFuelLevel()!=o2.getFuelLevel());
+		System.out.println("("+o.getFuelLevel()+" == "+o2.getFuelLevel()+") = "
+							+(o.getFuelLevel()==o2.getFuelLevel()));
+		Assert.assertFalse(o.getFuelLevel()==o2.getFuelLevel());
 	}
 }
