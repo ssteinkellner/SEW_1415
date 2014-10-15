@@ -18,8 +18,8 @@ public class Vivaro extends Opel{
 	 * @param color farbe der Außenhaut
 	 * @param isVan information, ob Lasten- oder Personentransporter
 	 */
-	public Vivaro(int wheelSize, boolean isVan, int speakerCount, boolean hasRadio, Color color){
-		super(speakerCount, hasRadio, color);
+	public Vivaro(int wheelSize, boolean isVan, int speakerCount, Color color){
+		super(speakerCount, color);
 		
 		this.wheelSize = wheelSize;
 		this.isVan = isVan;
@@ -39,5 +39,12 @@ public class Vivaro extends Opel{
 	 */
 	public boolean isVan(){
 		return isVan;
+	}
+	
+	@Override
+	public void drive(int meter){
+		if(super.getFuelLevel()>=0){ return; }
+		super.setFuelLevel(super.getFuelLevel()-meter/10);
+		//10 liter auf 100 kilometer
 	}
 }

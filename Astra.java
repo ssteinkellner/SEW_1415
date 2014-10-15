@@ -18,8 +18,8 @@ public class Astra extends Opel{
 	 * @param color farbe der Außenhaut
 	 * @param isCabrio information, ob Cabrio- oder Fix-dach
 	 */
-	public Astra(int wheelSize, int speakerCount, boolean hasRadio, Color color, boolean isCabrio){
-		super(speakerCount, hasRadio, color);
+	public Astra(int wheelSize, int speakerCount, Color color, boolean isCabrio){
+		super(speakerCount, color);
 
 		this.isCabrio = isCabrio;
 		this.wheelSize = wheelSize;
@@ -39,5 +39,17 @@ public class Astra extends Opel{
 	 */
 	public boolean isCabrio(){
 		return isCabrio;
+	}
+	
+	@Override
+	public void drive(int meter){
+		if(super.getFuelLevel()>=0){ return; }
+		if(isCabrio){
+			super.setFuelLevel(super.getFuelLevel()-meter/100*7);
+			//7 liter auf 100 kilometer, das cabrio braucht ein bisschen mehr treibstoff
+		}else{
+			super.setFuelLevel(super.getFuelLevel()-meter/100*5);
+			//5 liter auf 100 kilometer
+		}
 	}
 }

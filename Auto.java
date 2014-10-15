@@ -6,9 +6,10 @@ import java.awt.Color;
  * @author Steinkellner Sebastian
  * @version 141009
  */
-public class Auto {
+public abstract class Auto {
 	private int wheelCount;
 	private Color color;
+	private float fuel;
 	
 	/**
 	 * erstellt ein neues Auto
@@ -18,6 +19,7 @@ public class Auto {
 	public Auto(int wheelCount, Color color){
 		this.wheelCount = wheelCount;
 		this.color = color;
+		fuel = 0;
 	}
 	
 	/**
@@ -35,4 +37,31 @@ public class Auto {
 	public Color getColor(){
 		return color;
 	}
+
+	/**
+	 * möglichkeit den tankinhalt abzufragen
+	 */
+	public float getFuelLevel(){
+		return fuel;
+	}
+	
+	/**
+	 * möglichkeit den tankinhalt zu ändern für alle klassen, die Auto extenden
+	 * @param liter
+	 */
+	protected void setFuelLevel(float liter){
+		fuel = liter;
+	}
+
+	/**
+	 * möglichkeit das auto eine gewisse anzahl von metern zu bewegen. der tank wird dabei weniger
+	 * @param meter
+	 */
+	public abstract void drive(int meter);
+	
+	/**
+	 * möglichkeit den tank des autos aufzufüllen
+	 * @param liter
+	 */
+	public abstract void tanken(float liter);
 }
