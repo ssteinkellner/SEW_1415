@@ -10,13 +10,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @author SSteinkellner
- * @version 141015
- * 
- * @description
  * testfälle und beispiele, anhand derer man das prinzp der typanpassung
  * relativ einfach erläutern kann
  * 
+ * @author SSteinkellner
+ * @version 141015
  */
 public class Erklaerung_typanpassung {
 

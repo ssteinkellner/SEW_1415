@@ -11,14 +11,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @author SSteinkellner
- * @version 141010
- * 
- * @description
  * testfälle und beispiele, anhand derer man das prinzp der laufzeitpolymorhpie
  * relativ einfach erläutern kann
  * 
  * aufbauend auf {@link oop.tests.Erklaerung_typanpassung typanpassung}
+ * 
+ * @author SSteinkellner
+ * @version 141010
  */
 public class Erklaerung_laufzeit_und_ueberladung {
 	Opel o, o2;
@@ -71,7 +70,7 @@ public class Erklaerung_laufzeit_und_ueberladung {
 		o.drive(17);
 		o2.drive(17);
 		
-		System.out.println("("+o.getFuelLevel()+" == "+o2.getFuelLevel()+") = "
+		System.out.println("Debug: ("+o.getFuelLevel()+" == "+o2.getFuelLevel()+") = "
 							+(o.getFuelLevel()==o2.getFuelLevel()));
 		Assert.assertFalse(o.getFuelLevel()==o2.getFuelLevel());
 	}

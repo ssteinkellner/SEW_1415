@@ -10,13 +10,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @author SSteinkellner
- * @version 141015
- * 
- * @description
  * testfälle und beispiele, anhand derer man das prinzp der generizität relativ einfach erläutern kann
  * 
  * aufbauend auf {@link oop.tests.Erklaerung_typanpassung typanpassung}
+ * 
+ * @author SSteinkellner
+ * @version 141015
  */
 public class Erklaerung_generizitaet {
 	Werkstatt<Astra> w;
