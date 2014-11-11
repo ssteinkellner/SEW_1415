@@ -1,5 +1,7 @@
 package ssteinkellner.calculators;
 
+import ssteinkellner.behavior.DividingBehavior;
+
 /**
  * Dividierender Rechner
  * <br>Setzt beim erstellen gleich das Verhalten
@@ -9,4 +11,7 @@ package ssteinkellner.calculators;
  */
 public class DividingCalculator extends Calculator {
 
+	public DividingCalculator(){
+		super(new DividingBehavior());
+	}
 }

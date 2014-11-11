@@ -1,5 +1,8 @@
 package ssteinkellner.calculators;
 
+import ssteinkellner.behavior.MultiplyingBehavior;
+
+
 /**
  * Multiplizierender Rechner
  * <br>Setzt beim erstellen gleich das Verhalten
@@ -9,4 +12,7 @@ package ssteinkellner.calculators;
  */
 public class MultiplyingCalculator extends Calculator {
 
+	public MultiplyingCalculator(){
+		super(new MultiplyingBehavior());
+	}
 }
