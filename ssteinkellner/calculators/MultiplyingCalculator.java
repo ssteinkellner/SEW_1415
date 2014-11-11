@@ -12,6 +12,9 @@ import ssteinkellner.behavior.MultiplyingBehavior;
  */
 public class MultiplyingCalculator extends Calculator {
 
+	/**
+	 * Setzt beim erstellen gleich das Verhalten auf Multiplizierend
+	 */
 	public MultiplyingCalculator(){
 		super(new MultiplyingBehavior());
 	}

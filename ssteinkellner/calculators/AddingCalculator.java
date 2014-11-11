@@ -11,6 +11,9 @@ import ssteinkellner.behavior.AddingBehavior;
  */
 public class AddingCalculator extends Calculator {
 
+	/**
+	 * Setzt beim erstellen gleich das Verhalten auf Addierend
+	 */
 	public AddingCalculator(){
 		super(new AddingBehavior());
 	}

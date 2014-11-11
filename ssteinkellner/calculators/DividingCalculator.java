@@ -11,6 +11,9 @@ import ssteinkellner.behavior.DividingBehavior;
  */
 public class DividingCalculator extends Calculator {
 
+	/**
+	 * Setzt beim erstellen gleich das Verhalten auf Dividierend
+	 */
 	public DividingCalculator(){
 		super(new DividingBehavior());
 	}

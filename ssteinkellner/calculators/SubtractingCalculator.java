@@ -10,6 +10,10 @@ import ssteinkellner.behavior.SubtractingBehavior;
  * @version 2014.11.11
  */
 public class SubtractingCalculator extends Calculator {
+
+	/**
+	 * Setzt beim erstellen gleich das Verhalten auf Subtrahierend
+	 */
 	public SubtractingCalculator(){
 		super(new SubtractingBehavior());
 	}
