@@ -1,5 +1,7 @@
 package ssteinkellner.behavior;
 
+import java.util.List;
+
 /**
  * addierende Verhaltensweise eines rechners
  * <br> (nach strategy pattern)
@@ -9,4 +11,7 @@ package ssteinkellner.behavior;
  */
 public class AddingBehavior implements CalculationBehavior{
 
+	public List prozessCalculations(List values, double modifier) {
+		return null;
+	}
 }
