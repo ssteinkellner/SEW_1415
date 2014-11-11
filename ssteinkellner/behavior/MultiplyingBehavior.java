@@ -9,7 +9,7 @@ import java.util.List;
  * @author SSteinkellner
  * @version 2014.11.11
  */
-public class MulitplyingBehavior implements CalculationBehavior{
+public class MultiplyingBehavior implements CalculationBehavior{
 
 	public List prozessCalculations(List values, double modifier) {
 		return null;
