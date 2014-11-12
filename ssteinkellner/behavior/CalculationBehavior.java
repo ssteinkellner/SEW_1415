@@ -17,5 +17,5 @@ public interface CalculationBehavior {
 	 * @param modifier wert zum umrechnen
 	 * @return umgerechnete Liste der Werte
 	 */
-	public List prozessCalculations(List values, double modifier);
+	public <T extends Number> List<T> prozessCalculations(List<T> values, double modifier);
 }
