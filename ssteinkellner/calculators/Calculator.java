@@ -1,5 +1,7 @@
 package ssteinkellner.calculators;
 
+import java.util.List;
+
 import ssteinkellner.behavior.CalculationBehavior;
 
 /**
@@ -11,7 +13,9 @@ import ssteinkellner.behavior.CalculationBehavior;
  * @version 2014.11.11
  */
 public class Calculator {
-	
+	protected List<Double> values;
+	protected Double modifier;
+	protected CalculationBehavior behavior;
 	
 	public Calculator(){
 		
@@ -19,5 +23,29 @@ public class Calculator {
 	
 	public Calculator(CalculationBehavior cb){
 		
+	}
+	
+	public void setCalculationBehavior(CalculationBehavior cb){
+		
+	}
+	
+	public void addValue(double value){
+		
+	}
+	
+	public void removeValue(double value){
+		
+	}
+	
+	public void setModifier(double modifier){
+		
+	}
+	
+	public List<Double> prozessCalculations(){
+		return null;
+	}
+	
+	public String toString(){
+		return null;
 	}
 }
