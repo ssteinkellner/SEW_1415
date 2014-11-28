@@ -1,5 +1,15 @@
 <?php
 	abstract class Element {
-		abstract protected function printElement(id, type, value);
+		$id;
+		$type;
+		$value;
+		
+		function __construct($newId, $newType, $newValue) {
+			$id = $inewId;
+			$type = $newType;
+			$value = $newValue;
+		}
+		
+		abstract protected function printElement();
 	}
 ?>

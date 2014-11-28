@@ -1,7 +1,7 @@
 <?php
-	class htmlAdapter extends Element {
+	class jsonAdapter extends Element {
 		protected function printElement($id, $type, $value){
-		
+			
 		}
 	}
 ?>
