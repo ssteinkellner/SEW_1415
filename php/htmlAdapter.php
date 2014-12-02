@@ -1,7 +1,11 @@
 <?php
 	class htmlAdapter extends Element {
-		protected function printElement($id, $type, $value){
+		function __construct($newId, $newType, $newValue) {
+			parent::__construct($newId, $newType, $newValue);
+		}
 		
+		public function printElement(){
+			
 		}
 	}
 ?>
