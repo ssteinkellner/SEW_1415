@@ -5,9 +5,9 @@
 		protected $value;
 		
 		function __construct($newId, $newType, $newValue) {
-			$id = $newId;
-			$type = $newType;
-			$value = $newValue;
+			$this->id = $newId;
+			$this->type = $newType;
+			$this->value = $newValue;
 		}
 		
 		abstract public function printElement();
