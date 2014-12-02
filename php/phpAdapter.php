@@ -5,7 +5,10 @@
 		}
 		
 		public function printElement(){
-			echo '\''.$this->type.'\' => [ \'id\' => \''.$this->id.'\', \'value\' => \''.$this->value.'\']'."\n";
+			echo '\''.$this->type.'\' => ['."\n"
+				."\t".'\'id\' => \''.$this->id.'\','."\n"
+				."\t".'\'value\' => \''.$this->value.'\''."\n"
+				.']'."\n";
 		}
 	}
 ?>
