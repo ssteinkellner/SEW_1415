@@ -26,4 +26,6 @@
 	if(!empty($err)){
 		echo 'ERRORS:'."\n".$err;
 	}
+	
+	echo 'Good Bye!';
 ?>
