@@ -14,8 +14,9 @@
 						return;
 					}
 					
-					$factory = getFactory($input[1]);
-					$element = $factory->createElement($input[2],$input[3],$input[4]);
+					$factory = CLI::getFactory($input[1]);
+					$input = array_slice($input, 2);
+					$element = $factory->createElement($input[0],$input[1],$input[2]);
 					if($element===null){
 						echo 'Element wasn\'t created!';
 					}else{
@@ -28,20 +29,29 @@
 						return;
 					}
 					
+					$factory = CLI::getFactory($input[1]);
 					$input = array_slice($input, 2);
-					echo 'inputted Query: '.implode($input,' ')."\n";
+					$query = implode($input,' ').';';
+					echo 'inputted Query: '.$query."\n";
 					
-/*					global $link;
+					global $link, $err;
 					if($link){
 						$res = mysqli_query($link, $query);
 						if (!$res) {
 							$err .= 'MySQL Error: ' . mysqli_error($link) . "<br>\n";
 						}else if(mysqli_num_rows($res)>0){
-							$row = mysqli_fetch_assoc($res);
+							$row = array_values(mysqli_fetch_assoc($res));
+//							print_r($row);
+							$element = $factory->createElement($row[0],$row[1],$row[2]);
+							if($element===null){
+								echo 'Element wasn\'t created!';
+							}else{
+								echo $element->getString();
+							}
 						}
 					}else{
 						echo 'something went wrong!';
-					}*/
+					}
 					
 					break;
 				case 'help':
