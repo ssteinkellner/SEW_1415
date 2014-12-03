@@ -10,6 +10,6 @@
 			$this->value = $value;
 		}
 		
-		abstract public function printElement();
+		abstract public function getString();
 	}
 ?>

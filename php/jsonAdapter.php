@@ -4,8 +4,8 @@
 			parent::__construct($newId, $newType, $newValue);
 		}
 		
-		public function printElement(){
-			echo '{'."\n"
+		public function getString(){
+			return '{'."\n"
 				."\t".'"'.$this->type.'": {'."\n"
 				."\t\t".'"id": "'.$this->id.'",'."\n"
 				."\t\t".'"value": "'.$this->value.'"'."\n"
