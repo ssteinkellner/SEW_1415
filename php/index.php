@@ -3,7 +3,7 @@
 		echo 'Usage: php [...].php <ServerIp> <Databases> <Username> <Password>';
 		return;
 	}
-	var_dump($argv);
+//	var_dump($argv);
 	
 	include_once('./Factory.php');
 	include_once('./CLI.php');
@@ -29,11 +29,5 @@
 				echo $adapter->getString();
 				break;
 		}
-	}
-	
-	function askDB($query){
-		$values;
-		
-		return $values;
 	}
 ?>
