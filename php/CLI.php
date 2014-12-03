@@ -32,7 +32,7 @@
 					$factory = CLI::getFactory($input[1]);
 					$input = array_slice($input, 2);
 					$query = implode($input,' ').';';
-					echo 'inputted Query: '.$query."\n";
+//					echo 'inputted Query: '.$query."\n";
 					
 					global $link, $err;
 					if($link){
