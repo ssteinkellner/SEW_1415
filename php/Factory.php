@@ -25,5 +25,9 @@
 					return null;
 			}
 		}
+		
+		static function getAdapterTypes(){
+			return array('json','yaml','php','xml');
+		}
 	}
 ?>
