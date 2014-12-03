@@ -1,33 +1,29 @@
 <?php
 	if(count($argv)!=5){
-		echo 'Usage: php [...].php <ServerIp> <Databases> <Username> <Password>';
+		echo 'Usage: php [...].php <server ip> <database name> <username> <password>';
 		return;
 	}
 //	var_dump($argv);
 	
-	include_once('./Factory.php');
-	include_once('./CLI.php');
-	
-	$line = '';
-	$exitCmd = 'exit';
-	echo 'Welcome!'."\n".'to end programm type \''.$exitCmd.'\''."\n";
-	while(strtolower($line)!=$exitCmd){
-		echo ' > ';
-		$line = CLI::read();
-		action($line);
-	}
-	
-	
-	function action($line){
-		$input = explode(' ',$line);
-		if(count($input)<=0){ return; }
-		switch($input[0]){
-			case 'create':
-				if(count($input)<=1){ return; }
-				$factory = new Factory($input[1]);
-				$adapter = $factory->createElement(1,'user','test');
-				echo $adapter->getString();
-				break;
+	$err='';
+	$link = mysqli_connect('localhost', 'insy4', 'blabla', 'premiere');
+	if (!$link) {
+		$err .= 'MySQL Error: ' . mysqli_connect_errno() . "<br>\n";
+	}else{
+		include_once('./Factory.php');
+		include_once('./CLI.php');$line = '';
+		
+		$exitCmd = 'exit';
+		echo 'Welcome!'."\n".'to end programm type \''.$exitCmd.'\''."\n".'to get help type \'help\''."\n";
+		while(strtolower($line)!=$exitCmd){
+			echo ' > ';
+			$line = CLI::read();
+			CLI::action($line);
 		}
+		
+		mysqli_close($link);
+	}
+	if(!empty($err)){
+		echo 'ERRORS:'."\n".$err;
 	}
 ?>
