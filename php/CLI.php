@@ -76,7 +76,8 @@
 						.'- exit'."\n"
 						."\t".'stops the programm'."\n"
 						.''."\n"
-						.'Possible Adaptertypes: '.implode(Factory::getAdapterTypes(),', ')."\n";
+						.'Possible Adaptertypes: '."\n"
+						.'- '.implode(Factory::getAdapterTypes(),"\n".'- ')."\n";
 					break;
 			}
 		}
