@@ -1,3 +1,7 @@
 <?php
-	$factory = Factory.createElement($adapter);
+	class CLI {
+		public function read(){
+			return trim(fgets(STDIN));
+		}
+	}
 ?>
