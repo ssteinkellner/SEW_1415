@@ -4,10 +4,10 @@
 		protected $type;
 		protected $value;
 		
-		function __construct($newId, $newType, $newValue) {
-			$this->id = $newId;
-			$this->type = $newType;
-			$this->value = $newValue;
+		function __construct($id, $type, $value) {
+			$this->id = $id;
+			$this->type = $type;
+			$this->value = $value;
 		}
 		
 		abstract public function printElement();
