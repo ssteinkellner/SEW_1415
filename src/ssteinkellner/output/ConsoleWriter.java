@@ -5,6 +5,20 @@ package ssteinkellner.output;
  * @author SSteinkellner
  * @version 2014.12.30
  */
-public class ConsoleWriter {
+public class ConsoleWriter implements Writer{
 
+	@Override
+	public void printLine(String text) {
+		System.out.println(text);
+	}
+
+	@Override
+	public void printError(String text) {
+		System.err.println(text);
+	}
+
+	@Override
+	public void printException(Exception e) {
+		System.err.println(e);
+	}
 }
