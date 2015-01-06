@@ -11,7 +11,7 @@ public class Test_UserCache {
 	private UserCache uc;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		uc = new UserCache();
 	}
 	

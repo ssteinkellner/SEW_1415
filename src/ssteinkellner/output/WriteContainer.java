@@ -29,20 +29,22 @@ public class WriteContainer implements Writer{
 	}
 	
 	public void removeWriter(int index){
-		if(list.size()-1>index){
-			list.remove(index);
+		if(index >= list.size() || index < 0){
+			throw new IndexOutOfBoundsException("Expected Index: 0 - " + (list.size()-1) + ". got Index: " + index);
 		}
+		
+		list.remove(index);
 	}
 	
-	public void listWriters(){
+	public String listWriters(){
 		String text = "";
 		Iterator<Writer> i = list.iterator();
 		while(i.hasNext()){
 			if(!text.isEmpty()){ text+= ", "; }
 			text += i.next().getClass().getSimpleName();
 		}
-		
-		printLine(text);
+
+		return text;
 	}
 
 	@Override
