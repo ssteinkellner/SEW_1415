@@ -20,7 +20,8 @@ public class DebugWriter implements Writer{
 
 	@Override
 	public void printException(Exception e) {
-		System.err.println("[EXCEPTION]["+getPosition()+"]\t" + e);
+		System.err.println("[EXCEPTION]["+getPosition()+"]");
+		e.printStackTrace();
 	}
 	
 	/**
