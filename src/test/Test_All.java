@@ -10,6 +10,8 @@ import org.junit.runners.Suite.SuiteClasses;
 		Test_Tools.class,
 		Test_UserCache.class,
 		Test_ConsoleWriter.class,
+		Test_DebugWriter.class,
+		Test_FileWriter.class,
 		Test_WriteContainer.class,
 		Test_WriteContainer_2.class
 	})
