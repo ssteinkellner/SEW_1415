@@ -1,4 +1,4 @@
-package ssteinkellner;
+package ssteinkellner.connection;
 
 
 /**
