@@ -8,7 +8,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import ssteinkellner.Tools;
+import ssteinkellner.tools.ListTools;
 
 public class Test_Tools {
 	List<String> values;
@@ -23,14 +23,14 @@ public class Test_Tools {
 	
 	@Test
 	public void test_NoDelimiter() {
-		String text = Tools.listToString(values);
+		String text = ListTools.listToString(values);
 		
 		assertEquals("value1, value2, value3",text);
 	}
 	
 	@Test
 	public void test_Delimiter() {
-		String text = Tools.listToString(values, ";");
+		String text = ListTools.listToString(values, ";");
 		
 		assertEquals("value1;value2;value3",text);
 	}

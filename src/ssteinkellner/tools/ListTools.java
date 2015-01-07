@@ -1,4 +1,4 @@
-package ssteinkellner;
+package ssteinkellner.tools;
 
 import java.util.Iterator;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
  * @author SSteinkellner
  * @version 2015.01.06
  */
-public class Tools {
+public class ListTools {
 	/**
 	 * verwandelt eine string-liste in eine beistrichgetrennte auflistung als string
 	 * @param values liste der strings
