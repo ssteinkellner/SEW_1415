@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Name of file  : build.xml
+	Author        : Steinkellner Sebastian <ssteinkellner@student.tgm.ac.at>
+	Version       : 2015.01.08
+	Description   : a simple build file to start and learn something about the build tool phing
+-->
+
+<project name="BuildToolTest" default="hello">
+
+	<target name="hello">
+		<echo msg="Hello World!">
+	</target>
+	
+</project>
