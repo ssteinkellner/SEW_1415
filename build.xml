@@ -7,10 +7,11 @@
 	Description   : a simple build file to start and learn something about the build tool phing
 -->
 
-<project name="BuildToolTest" default="hello">
+<project name="BuildToolTest" basedir="." default="hello">
+	<property file="./build.properties" />
 
 	<target name="hello">
-		<echo msg="Hello World!">
+		<echo msg="Hello World!" />
 	</target>
 	
 </project>
