@@ -14,4 +14,7 @@
 		<echo msg="Hello World!" />
 	</target>
 	
+	<fileset dir="." id="php" includes="./src/">
+		<filename name="*.php" />
+	</fileset>
 </project>
