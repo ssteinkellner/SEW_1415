@@ -6,5 +6,5 @@
 		Description   : a simple php file printing the text "Hello World!"
 	*/
 	
-	echo 'Hello World!';
+	echo 'Hello World!'."\n";
 ?>
