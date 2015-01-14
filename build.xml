@@ -3,15 +3,32 @@
 <!--
 	Name of file  : build.xml
 	Author        : Steinkellner Sebastian <ssteinkellner@student.tgm.ac.at>
-	Version       : 2015.01.08
+	Version       : 2015.01.14
+	Created       : 2015.01.08
 	Description   : a simple build file to start and learn something about the build tool phing
 -->
 
 <project name="BuildToolTest" basedir="." default="hello">
-	<property file="./build.properties" />
+	<property file="build.properties" />
 
 	<target name="hello">
 		<echo msg="Hello World!" />
+	</target>
+	<target name="version">
+		<echo msg="${projekt.name} version: ${projekt.version}" />
+	</target>
+	<target name="mod">
+		<fileset refid="php" />
+		<filterchain>
+			<replaceregexp>
+				<regexp pattern="\r(\n)" replace="\1"/>
+			</replaceregexp>
+		</filterchain>
+	</target>
+	<target name="copy">
+		<copy todir="${builddir}">
+            <fileset refid="php" />
+        </copy>
 	</target>
 	
 	<fileset dir="." id="php" includes="./src/">
