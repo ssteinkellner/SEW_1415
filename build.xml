@@ -29,19 +29,23 @@
 		
 	</target>
 	<target name="test">
-		<phpunit>
-			<formatter todir="reports" type="xml"/>
+		<mkdir dir="${directory.reports}" />
+		<phpunit printsummary="true">
+			<formatter todir="${directory.reports}" type="xml"/>
 			<batchtest>
-				<fileset dir="tests">
-					<include name="**/*Test*.php"/>
-					<exclude name="**/Abstract*.php"/>
-				</fileset>
+				<fileset refid="tests" />
 			</batchtest>
 		</phpunit>
 	</target>
 	
+	<target name="clean">
+		<delete dir="${directory.reports}" includeemptydirs="true" verbose="true" failonerror="true" />
+	</target>
 	
-	<fileset dir="." id="php" includes="./src/">
+	<fileset dir="." id="php" includes="./${directory.source}/">
 		<filename name="*.php" />
+	</fileset>
+	<fileset dir="." id="tests" includes="./${directory.testCases}/">
+		<include name="*.php"/>
 	</fileset>
 </project>
