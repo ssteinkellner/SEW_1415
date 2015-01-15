@@ -26,10 +26,20 @@
 		</filterchain>
 	</target>
 	<target name="copy">
-		<copy todir="${builddir}">
-            <fileset refid="php" />
-        </copy>
+		
 	</target>
+	<target name="test">
+		<phpunit>
+			<formatter todir="reports" type="xml"/>
+			<batchtest>
+				<fileset dir="tests">
+					<include name="**/*Test*.php"/>
+					<exclude name="**/Abstract*.php"/>
+				</fileset>
+			</batchtest>
+		</phpunit>
+	</target>
+	
 	
 	<fileset dir="." id="php" includes="./src/">
 		<filename name="*.php" />
