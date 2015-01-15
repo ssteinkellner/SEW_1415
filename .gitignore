@@ -1,6 +1,10 @@
 *.class
 ~$* #opened windows files
 *_old #no longer used files
+*.pdf
+*.zip
+*.rar
+
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
