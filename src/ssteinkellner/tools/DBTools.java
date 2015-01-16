@@ -16,7 +16,7 @@ public class DBTools {
 	 * die methode liest aus dem resultset die spaltennamen aus und schreibt sie in eine liste
 	 * @param resultset ergebnis einer sql-abfrage
 	 * @return liste der spaltennamen
-	 * @throws SQLException 
+	 * @throws SQLException if metaData can't be extracted, or a column name
 	 */
 	public static List<String> getTableHead(ResultSet resultset) throws SQLException{
 		List<String> values = new LinkedList<String>();
@@ -33,7 +33,7 @@ public class DBTools {
 	 * die methode liefert die daten einer tabelle als liste von string[]
 	 * @param resultset ergebnis einer sql-abfrage
 	 * @return daten der tabelle
-	 * @throws SQLException 
+	 * @throws SQLException if metaData can't be extracted
 	 */
 	public static List<String[]> getTableData(ResultSet resultset) throws SQLException{
 		List<String[]> values = new LinkedList<String[]>();

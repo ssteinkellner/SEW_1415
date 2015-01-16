@@ -20,7 +20,7 @@ public class FileWriter implements Writer{
 			try {
 				file.createNewFile();
 			} catch (IOException e) {
-				printException(e,"Exception when Creating File!");
+				printInternalException(e,"Exception when Creating File!");
 			}
 		}
 	}
@@ -44,11 +44,11 @@ public class FileWriter implements Writer{
 		try(PrintWriter out = new PrintWriter(new BufferedWriter(new java.io.FileWriter(file, true)))) {
 		    out.println(text);
 		}catch (IOException e) {
-			printException(e,"Exception when Printing to File!");
+			printInternalException(e,"Exception when Printing to File!");
 		}
 	}
 	
-	private void printException(Exception e, String message){
+	private void printInternalException(Exception e, String message){
 		ConsoleWriter cw = new ConsoleWriter();
 		cw.printError(message);
 		cw.printException(e);

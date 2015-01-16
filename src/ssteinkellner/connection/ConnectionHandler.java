@@ -1,6 +1,10 @@
 package ssteinkellner.connection;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import ssteinkellner.Controller;
 
 /**
  * eine klasse, die fuer das auf/abbauen von verbindungen zustaendig ist.
@@ -35,9 +39,42 @@ public class ConnectionHandler {
 	
 	public Connection getConnection() {
 		if(connection==null){
-			
+			connStart();
 		}
 		
 		return connection;
 	}
+	
+
+	/**
+	 * loads the database driver (com.mysql.jdbc.Driver) and connects to the database. closes the programm, if there is an error
+	 */
+	private void connStart() {
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+		} catch(Exception ex) {
+			Controller.getOutput().printError("Can't find Database driver class!");
+			Controller.exit();
+		}
+
+		try {
+			connection = (Connection) DriverManager.getConnection("jdbc:mysql://" + host + "/" + database, usercache.getUser(), usercache.getPassword());
+			Controller.getOutput().printLine("Successfully connected to " + database + " on " + host);
+		} catch(SQLException ex) {
+			Controller.getOutput().printError("DB connection error!");
+			Controller.exit();
+		}
+	}
+	
+	public void close(){
+		if(connection==null){
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				Controller.getOutput().printError("Couldn't close Connection!");
+			}
+		}
+	}
+
 }
