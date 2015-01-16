@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * eine klasse mit methoden, die immer wieder gebraucht werden
+ * eine klasse mit methoden, um listen in strings umzuwandeln
  * @author SSteinkellner
  * @version 2015.01.06
  */

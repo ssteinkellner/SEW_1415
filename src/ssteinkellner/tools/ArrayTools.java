@@ -1,8 +1,5 @@
 package ssteinkellner.tools;
 
-import java.util.Iterator;
-import java.util.List;
-
 /**
  * eine klasse mit methoden, um arrays in Strings umzuandeln
  * @author SSteinkellner
@@ -14,8 +11,8 @@ public class ArrayTools {
 	 * @param values liste der strings
 	 * @return eine beistrichgetrennte liste der strings
 	 */
-	public static String listToString(String[] values){
-		return listToString(values, ", ");
+	public static String arrayToString(String[] values){
+		return arrayToString(values, ", ");
 	}
 	
 	/**
@@ -24,7 +21,7 @@ public class ArrayTools {
 	 * @param delimiter zeichen, das als trennzeichen verwendet werden soll
 	 * @return eine delimitergetrennte liste der strings
 	 */
-	public static String listToString(String[] values, String delimiter){
+	public static String arrayToString(String[] values, String delimiter){
 		String text = "";
 		
 		for(int i=0;i<values.length;i++){
