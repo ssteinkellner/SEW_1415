@@ -10,8 +10,8 @@ import org.junit.Test;
 
 import ssteinkellner.tools.ListTools;
 
-public class Test_Tools {
-	List<String> values;
+public class Test_ListTools {
+	private List<String> values;
 	
 	@Before
 	public void setUp() {

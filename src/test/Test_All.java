@@ -7,7 +7,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({
 		Test_ConnectionHandler.class,
-		Test_Tools.class,
+		Test_ListTools.class,
+		Test_ArrayTools.class,
 		Test_UserCache.class,
 		Test_ConsoleWriter.class,
 		Test_DebugWriter.class,
