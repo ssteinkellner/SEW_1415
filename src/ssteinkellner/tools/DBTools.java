@@ -22,7 +22,7 @@ public class DBTools {
 		List<String> values = new LinkedList<String>();
 		ResultSetMetaData rsmd = resultset.getMetaData();
 		
-		for(int i=0;i<rsmd.getColumnCount();i++){
+		for(int i=1;i<rsmd.getColumnCount();i++){
 			values.add(rsmd.getColumnName(i));
 		}
 		
@@ -37,13 +37,13 @@ public class DBTools {
 	 */
 	public static List<String[]> getTableData(ResultSet resultset) throws SQLException{
 		List<String[]> values = new LinkedList<String[]>();
-		int columnCount = resultset.getMetaData().getColumnCount();
+		int columnCount = resultset.getMetaData().getColumnCount()-1;
 
 		String[] temp;
 		while(resultset.next()){
 			temp = new String[columnCount];
 			for(int i=0;i<columnCount;i++){
-				temp[i] = resultset.getString(i);
+				temp[i] = resultset.getString(i+1);
 			}
 			values.add(temp);
 		}
