@@ -8,11 +8,15 @@
 	Description   : a simple build file to start and learn something about the build tool phing
 -->
 
-<project name="BuildToolTest" basedir="." default="hello">
+<project name="BuildToolTest" basedir="." default="all">
 	<property file="build.properties" />
 
+	<!-- targets defined by teachers -->
 	<target name="hello">
 		<echo msg="Hello World!" />
+		<echo msg="fileset">
+			<fileset refid="php" />
+		</echo>
 	</target>
 	<target name="version">
 		<echo msg="${projekt.name} version: ${projekt.version}" />
@@ -30,22 +34,40 @@
 	</target>
 	<target name="test">
 		<mkdir dir="${directory.reports}" />
+		<fileset refid="tests" />
 		<phpunit printsummary="true">
-			<formatter todir="${directory.reports}" type="xml"/>
-			<batchtest>
-				<fileset refid="tests" />
-			</batchtest>
+			<formatter todir="${directory.reports}/" type="xml"/>
+			<batchtest />
 		</phpunit>
 	</target>
+	<target name="db">
+		<pdosqlexec url="mysql:host=${sql.hostname};dbname=${sql.database}" userid="${sql.user}" password="${sql.password}">
+			<fileset refid="sql" />
+		</pdosqlexec>
+	</target>
+	<target name="mail">
+		<mail tolist="${email.receiver}" from="${email.sender}" subject="build of '${projekt.name}' complete">
+			${email.message}
+			Programm: '${projekt.name}'
+			Version: ${projekt.version}
+		</mail>
+	</target>
+	<target name="all" depends="mail, test, copy, mod, clean" />
 	
+	<!-- my own targets -->
 	<target name="clean">
-		<delete dir="${directory.reports}" includeemptydirs="true" verbose="true" failonerror="true" />
+		<delete dir="${directory.reports}" verbose="true" />
+	</target>
+	<target name="debug">
+		<echo msg="- - - Filesets - - -">
+			<fileset refid="php" />
+			<fileset refid="tests" />
+			<fileset refid="sql" />
+		</echo>
 	</target>
 	
-	<fileset dir="." id="php" includes="./${directory.source}/">
-		<filename name="*.php" />
-	</fileset>
-	<fileset dir="." id="tests" includes="./${directory.testCases}/">
-		<include name="*.php"/>
-	</fileset>
+	<!-- filesets -->
+	<fileset dir="${directory.source}/" id="php" includes="*.php" />
+	<fileset dir="${directory.testCases}/" id="tests" includes="Test_*.php" />
+	<fileset dir="${directory.sql}/" id="sql" includes="*.sql" />
 </project>

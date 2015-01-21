@@ -1,6 +1,6 @@
 <?php
 /*
-	Name of file  : HalloWelt.c
+	Name of file  : Test_test.php
 	Author        : Steinkellner Sebastian <ssteinkellner@student.tgm.ac.at>
 	Version       : 2015.01.15
 	Description   : a phpunit test case to test the test.php from the elearning
