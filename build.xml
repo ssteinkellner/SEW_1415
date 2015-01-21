@@ -30,7 +30,9 @@
 		</filterchain>
 	</target>
 	<target name="copy">
-		
+		<scp host="${scp.host}" username="${scp.user}" password="${scp.pwd}" todir="/var/www/${projekt.name}/${projekt.version}">
+			<fileset refid="php" />
+		</scp>
 	</target>
 	<target name="test">
 		<mkdir dir="${directory.reports}" />
@@ -41,7 +43,7 @@
 		</phpunit>
 	</target>
 	<target name="db">
-		<pdosqlexec url="mysql:host=${sql.hostname};dbname=${sql.database}" userid="${sql.user}" password="${sql.password}">
+		<pdosqlexec url="mysql:host=${sql.host};dbname=${sql.db}" userid="${sql.user}" password="${sql.pwd}">
 			<fileset refid="sql" />
 		</pdosqlexec>
 	</target>
@@ -52,7 +54,7 @@
 			Version: ${projekt.version}
 		</mail>
 	</target>
-	<target name="all" depends="mail, test, copy, mod, clean" />
+	<target name="all" depends="clean, mod, copy, test, db, mail" />
 	
 	<!-- my own targets -->
 	<target name="clean">
@@ -67,7 +69,7 @@
 	</target>
 	
 	<!-- filesets -->
-	<fileset dir="${directory.source}/" id="php" includes="*.php" />
+	<fileset dir="${directory.source}/"    id="php"   includes="*.php" />
 	<fileset dir="${directory.testCases}/" id="tests" includes="Test_*.php" />
-	<fileset dir="${directory.sql}/" id="sql" includes="*.sql" />
+	<fileset dir="${directory.sql}/"       id="sql"   includes="*.sql" />
 </project>
