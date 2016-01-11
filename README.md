@@ -1,4 +1,3 @@
-SEW
-===
+# SEW 2014/15
 
-repository für alle einzelarbeit sew-projekte
+repository für alle sew-projekte
